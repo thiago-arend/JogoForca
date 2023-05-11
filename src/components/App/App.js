@@ -1,6 +1,7 @@
-import '../palavras.js';
-import Jogo from './Jogo.js';
-import Letras from './Letras.js';
+import './App.css';
+import '../../palavras.js';
+import Jogo from '../Jogo/Jogo.js';
+import Letras from '../Letras/Letras.js';
 
 export default function App() {
     return (

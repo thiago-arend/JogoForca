@@ -1,0 +1,24 @@
+.alfabeto {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
+
+    width: 620px;
+    height: 95px;
+    margin: 0 auto;
+}
+
+.letra-alfabeto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    border: 1px solid #39739D;
+    background-color: #E1ECF4;
+    color: #39739D;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
