@@ -1,3 +1,12 @@
+import '../palavras.js';
+import Jogo from './Jogo.js';
+import Letras from './Letras.js';
+
 export default function App() {
-    return <h1>Olá mundo!</h1>
+    return (
+        <div className="container">
+            <Jogo />
+            <Letras />
+        </div>
+    )
 }
