@@ -40,3 +40,11 @@
     font-size: 50px;
     font-weight: bold;
 }
+
+.derrota {
+    color: #27AE60;
+}
+
+.vitoria {
+    color: #FF0000;
+}
