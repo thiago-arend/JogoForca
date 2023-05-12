@@ -1,14 +1,23 @@
 import "./Letras.css";
 
-export default function Letras({habilitado}) {
-    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
-        "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
-        "v", "w", "x", "y", "z"];
+export default function Letras(props) {
+    const {palavraSorteada, setIndiceImagem, totalErros, setTotalErros, letrasHabilitadas, setLetrasHabilitadas, alfabeto} = props;
+
+    function processaLetra(letra) {
+        letrasHabilitadas.splice(letrasHabilitadas.indexOf(letra), 1); // remove a letra do array in place
+        setLetrasHabilitadas([...letrasHabilitadas]); // atualiza a mudança na variavel de estado
+
+        if (!palavraSorteada.split("").includes(letra)) { // se errou a letra
+            setTotalErros(totalErros + 1);
+            setIndiceImagem(totalErros + 1);
+        }
+    }
 
     return (
         <div className="alfabeto">
-            {alfabeto.map((l) => <button key={l} disabled={(!habilitado) ? "disabled": ""}
-                 className="letra-alfabeto" onClick={() => alert('clicou')}> {l.toUpperCase()} </button>)}
+            {alfabeto.map((l) => <button key={l} disabled={(!letrasHabilitadas.includes(l)) ? "disabled": ""}
+                 className={`letra-alfabeto ${(!letrasHabilitadas.includes(l)) ? "usada": ""}`}
+                   onClick={() => processaLetra(l)}> {l.toUpperCase()} </button>)}
         </div>
     )
 }

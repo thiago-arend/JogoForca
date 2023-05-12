@@ -13,16 +13,23 @@ import forca5 from '../../assets/forca5.png';
 import forca6 from '../../assets/forca6.png';
 
 export default function App() {
-    const [habilitado, setHabilitado] = useState(false);
+    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
+    "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+    "v", "w", "x", "y", "z"];
+    const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
+
+    const [letrasHabilitadas, setLetrasHabilitadas] = useState([]); // o vetor de letras habilitadas começa vazio
     const [totalErros, setTotalErros] = useState(0);
-    const [imagemForca, setImagemForca] = useState(forca0);
+    const [indiceImagem, setIndiceImagem] = useState(0);
     const [palavraSorteada, setPalavraSorteada] = useState("");
 
     return (
         <div className="container">
-            <Jogo palavraSorteada = {palavraSorteada} setPalavraSorteada = {setPalavraSorteada} 
-                setHabilitado = {setHabilitado} imagemForca = {imagemForca} listaPalavras = {listaPalavras}/>
-            <Letras habilitado = {habilitado} setHabilitado = {setHabilitado}/>
+            <Jogo imagensForca = {imagensForca} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasHabilitadas = {letrasHabilitadas}
+                setPalavraSorteada = {setPalavraSorteada} indiceImagem = {indiceImagem}
+                listaPalavras = {listaPalavras} setLetrasHabilitadas = {setLetrasHabilitadas}/>
+            <Letras totalErros = {totalErros} setTotalErros = {setTotalErros} alfabeto = {alfabeto} letrasHabilitadas = {letrasHabilitadas} 
+                setLetrasHabilitadas = {setLetrasHabilitadas} palavraSorteada = {palavraSorteada} setIndiceImagem = {setIndiceImagem}/>
         </div>
     )
 }
