@@ -3,7 +3,7 @@ import "./Letras.css";
 export default function Letras(props) {
     const {setFimJogo, setVitoria, palavraSorteada, setIndiceImagem,
          totalErros, setTotalErros, letrasDesabilitadas, setLetrasDesabilitadas,
-          alfabeto} = props;
+         alfabeto} = props;
 
     function verificaAdivinhouPalavra(letras) {
         let numLetras = 0;
