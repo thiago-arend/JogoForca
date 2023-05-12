@@ -2,8 +2,8 @@ import './Jogo.css';
 
 
 export default function Jogo(props) {
-    const {alfabeto, setPalavraSorteada, palavraSorteada, letrasHabilitadas,
-         indiceImagem, imagensForca, listaPalavras, setLetrasHabilitadas} = props;
+    const {fimJogo, vitoria, setPalavraSorteada, palavraSorteada, letrasDesabilitadas,
+         indiceImagem, imagensForca, listaPalavras, setLetrasDesabilitadas} = props;
 
     function sorteiaPalavra() {
         const min = 0;
@@ -15,7 +15,7 @@ export default function Jogo(props) {
 
     function processaPalavra() {
         // habilita letras
-        setLetrasHabilitadas(alfabeto);
+        setLetrasDesabilitadas([]);
         // sorteia palavra e salva estado
         const pSorteada = sorteiaPalavra();
         setPalavraSorteada(pSorteada);
@@ -27,8 +27,11 @@ export default function Jogo(props) {
             <div>
                 <button onClick={ processaPalavra }>Escolher Palavra</button>
                 <ul className="palavra">
-                    {palavraSorteada.split("").map((l, i) => <li key={i} className="underline">
-                        {(!letrasHabilitadas.includes(l)) ? l : "_"}
+                    {palavraSorteada.split("").map((l, i) => <li key={i} 
+                        className={`underline 
+                        ${ ((fimJogo && vitoria) ? "vitoria" : "") } 
+                        ${ ((fimJogo && !vitoria) ? "derrota" : "") }`}>
+                        {(letrasDesabilitadas.includes(l)) ? l : "_"}
                     </li>)}
                 </ul>
             </div>

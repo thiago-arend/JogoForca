@@ -18,18 +18,24 @@ export default function App() {
     "v", "w", "x", "y", "z"];
     const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
-    const [letrasHabilitadas, setLetrasHabilitadas] = useState([]); // o vetor de letras habilitadas começa vazio
+    const [letrasDesabilitadas, setLetrasDesabilitadas] = useState(alfabeto); // o vetor de letras habilitadas começa com todas
     const [totalErros, setTotalErros] = useState(0);
     const [indiceImagem, setIndiceImagem] = useState(0);
     const [palavraSorteada, setPalavraSorteada] = useState("");
+    const [vitoria, setVitoria] = useState(false);
+    const [fimJogo, setFimJogo] = useState(false);
+
+    console.log(palavraSorteada);
+    console.log('fimjogo', fimJogo);
+    console.log('vitoria', vitoria);
 
     return (
         <div className="container">
-            <Jogo imagensForca = {imagensForca} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasHabilitadas = {letrasHabilitadas}
+            <Jogo fimJogo = {fimJogo} vitoria = {vitoria} imagensForca = {imagensForca} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
                 setPalavraSorteada = {setPalavraSorteada} indiceImagem = {indiceImagem}
-                listaPalavras = {listaPalavras} setLetrasHabilitadas = {setLetrasHabilitadas}/>
-            <Letras totalErros = {totalErros} setTotalErros = {setTotalErros} alfabeto = {alfabeto} letrasHabilitadas = {letrasHabilitadas} 
-                setLetrasHabilitadas = {setLetrasHabilitadas} palavraSorteada = {palavraSorteada} setIndiceImagem = {setIndiceImagem}/>
+                listaPalavras = {listaPalavras} setLetrasDesabilitadas = {setLetrasDesabilitadas}/>
+            <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros} setTotalErros = {setTotalErros} alfabeto = {alfabeto} letrasDesabilitadas = {letrasDesabilitadas} 
+                setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada} setIndiceImagem = {setIndiceImagem}/>
         </div>
     )
 }
