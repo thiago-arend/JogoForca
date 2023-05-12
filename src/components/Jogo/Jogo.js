@@ -1,29 +1,34 @@
 import './Jogo.css';
-import forca0 from '../../assets/forca0.png';
-import forca1 from '../../assets/forca1.png';
-import forca2 from '../../assets/forca2.png';
-import forca3 from '../../assets/forca3.png';
-import forca4 from '../../assets/forca4.png';
-import forca5 from '../../assets/forca5.png';
-import forca6 from '../../assets/forca6.png';
 
-export default function Jogo() {
+
+export default function Jogo(props) {
+    const {setPalavraSorteada, palavraSorteada, setHabilitado,
+         imagemForca, listaPalavras} = props;
+
+    function sorteiaPalavra() {
+        const min = 0;
+        const max = 187;
+        const indice = Math.floor(Math.random() * (max - min + 1) + min);
+
+        return listaPalavras[indice];
+    }
+
+    function processaPalavra() {
+        // habilita letras
+        setHabilitado(true);
+        // sorteia palavra e salva estado
+        const pSorteada = sorteiaPalavra();
+        setPalavraSorteada(pSorteada);
+        console.log(pSorteada);
+    }
+
     return (
         <div className="jogo">
-            <img src={forca0} />
+            <img src={ imagemForca } />
             <div>
-                <button>Escolher Palavra</button>
+                <button onClick={ processaPalavra }>Escolher Palavra</button>
                 <ul className="palavra">
-                    <li className="underline">_</li>
-                    <li className="adivinhada">a</li>
-                    <li className="underline">_</li>
-                    <li className="underline">_</li>
-                    <li className="underline">_</li>
-                    <li className="underline">_</li>
-                    <li className="underline">_</li>
-                    <li className="adivinhada">a</li>
-                    <li className="underline">_</li>
-                    <li className="adivinhada">a</li>
+                    {palavraSorteada.split("").map((l, i) => <li key={i} className="underline">_</li>)}
                 </ul>
             </div>
         </div>
