@@ -15,15 +15,15 @@ export default function Jogo() {
                 <button>Escolher Palavra</button>
                 <ul className="palavra">
                     <li className="underline">_</li>
-                    <li className="letra-adivinhada">a</li>
+                    <li className="adivinhada">a</li>
                     <li className="underline">_</li>
                     <li className="underline">_</li>
                     <li className="underline">_</li>
                     <li className="underline">_</li>
                     <li className="underline">_</li>
-                    <li className="letra-adivinhada">a</li>
+                    <li className="adivinhada">a</li>
                     <li className="underline">_</li>
-                    <li className="letra-adivinhada">a</li>
+                    <li className="adivinhada">a</li>
                 </ul>
             </div>
         </div>
