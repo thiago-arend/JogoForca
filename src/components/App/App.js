@@ -1,7 +1,8 @@
 import './App.css';
+import { useState } from 'react';
 import Jogo from '../Jogo/Jogo.js';
 import Letras from '../Letras/Letras.js';
-import { useState } from 'react';
+import Chute from '../Chute/Chute';
 import listaPalavras from '../../palavras.js';
 
 export default function App() {
@@ -15,8 +16,6 @@ export default function App() {
     const [palavraSorteada, setPalavraSorteada] = useState("");
     const [vitoria, setVitoria] = useState(false);
     const [fimJogo, setFimJogo] = useState(false);
-
-    console.log(palavraSorteada);
 
     function resetEstado(pSorteada) {
         setLetrasDesabilitadas([]);
@@ -37,6 +36,7 @@ export default function App() {
                     letrasDesabilitadas = {letrasDesabilitadas} 
                     setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada}
                     setIndiceImagem = {setIndiceImagem}/>
+            <Chute />
         </div>
     )
 }
