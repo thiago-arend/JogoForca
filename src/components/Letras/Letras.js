@@ -3,7 +3,7 @@ import "./Letras.css";
 export default function Letras(props) {
     const {setFimJogo, setVitoria, palavraSorteada, setIndiceImagem,
          totalErros, setTotalErros, letrasDesabilitadas, setLetrasDesabilitadas,
-         alfabeto, setJogoEmProgresso} = props;
+         alfabeto} = props;
 
     function verificaAdivinhouPalavra(letras) {
         let numLetras = 0;
@@ -19,10 +19,10 @@ export default function Letras(props) {
         const letrasDesabilitadasAtualizadas = [...letrasDesabilitadas, letra];
         setLetrasDesabilitadas(letrasDesabilitadasAtualizadas); // atualiza a mudança na variavel de estado
 
-        let qtdErros;
+        let qtdErros = totalErros;
         const adivinhou = verificaAdivinhouPalavra(letrasDesabilitadasAtualizadas);
         if (!palavraSorteada.split("").includes(letra)) { // se errou a letra
-            qtdErros = totalErros + 1;
+            qtdErros++;
             setTotalErros(qtdErros);
             setIndiceImagem(qtdErros);
         }
@@ -30,14 +30,12 @@ export default function Letras(props) {
         if (qtdErros < 6 && adivinhou){ // vitoria
             // desabilita letras
             setLetrasDesabilitadas(alfabeto);
-            setJogoEmProgresso(false);
             setFimJogo(true);
             setVitoria(true);
         }
         if (qtdErros === 6 && !adivinhou){ // derrota
             // desabilita letras
             setLetrasDesabilitadas(alfabeto);
-            setJogoEmProgresso(false);
             setFimJogo(true);
             setVitoria(false);
         }

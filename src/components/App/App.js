@@ -15,11 +15,8 @@ export default function App() {
     const [palavraSorteada, setPalavraSorteada] = useState("");
     const [vitoria, setVitoria] = useState(false);
     const [fimJogo, setFimJogo] = useState(false);
-    const [jogoEmProgresso, setJogoEmProgresso] = useState(false);
 
     console.log(palavraSorteada);
-    // console.log('fimjogo', fimJogo);
-    // console.log('vitoria', vitoria);
 
     function resetEstado(pSorteada) {
         setLetrasDesabilitadas([]);
@@ -34,13 +31,12 @@ export default function App() {
         <div className="container">
             <Jogo resetEstado = {resetEstado} fimJogo = {fimJogo} vitoria = {vitoria} 
                   palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
-                  jogoEmProgresso = {jogoEmProgresso} indiceImagem = {indiceImagem} 
-                  setJogoEmProgresso = {setJogoEmProgresso} listaPalavras = {listaPalavras} />
+                  indiceImagem = {indiceImagem} listaPalavras = {listaPalavras} />
             <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros}
                     setTotalErros = {setTotalErros} alfabeto = {alfabeto} 
                     letrasDesabilitadas = {letrasDesabilitadas} 
                     setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada}
-                    setJogoEmProgresso = {setJogoEmProgresso} setIndiceImagem = {setIndiceImagem}/>
+                    setIndiceImagem = {setIndiceImagem}/>
         </div>
     )
 }
