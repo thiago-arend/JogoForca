@@ -1,7 +1,7 @@
 import './Chute.css';
 
 export default function Chute(props) {
-    const {setIndiceImagem, setFimJogo, setVitoria, letrasDesabilitadas, setChuteHabilitado, 
+    const {setIndiceImagem, setFimJogo, setVitoria, setChuteHabilitado, 
             alfabeto, chuteHabilitado, setLetrasDesabilitadas, palavraSorteada, chute, setChute} = props;
 
     function validaChute() {

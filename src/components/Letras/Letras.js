@@ -15,15 +15,21 @@ export default function Letras(props) {
         return false;
     }
 
-    function contabilizaErro(qtdErros, letra) {
+    function processaLetra(letra) {
+        const letrasDesabilitadasAtualizadas = [...letrasDesabilitadas, letra];
+        setLetrasDesabilitadas(letrasDesabilitadasAtualizadas); // atualiza a mudança na variavel de estado
+
+        const adivinhou = verificaAdivinhouPalavra(letrasDesabilitadasAtualizadas);
+        let qtdErros = totalErros;
+
+        // contbailiza erro
         if (!palavraSorteada.split("").includes(letra)) { // se errou a letra
             qtdErros++;
             setTotalErros(qtdErros);
             setIndiceImagem(qtdErros);
         }
-    }
-
-    function processaResultadoJogo(qtdErros, adivinhou) {
+        
+        // processa resultado jogo
         if (qtdErros < 6 && adivinhou){ // vitoria
             // desabilita letras
             setLetrasDesabilitadas(alfabeto);
@@ -38,17 +44,6 @@ export default function Letras(props) {
             setVitoria(false);
             setChuteHabilitado(false);
         }
-    }
-
-    function processaLetra(letra) {
-        const letrasDesabilitadasAtualizadas = [...letrasDesabilitadas, letra];
-        setLetrasDesabilitadas(letrasDesabilitadasAtualizadas); // atualiza a mudança na variavel de estado
-
-        const adivinhou = verificaAdivinhouPalavra(letrasDesabilitadasAtualizadas);
-        let qtdErros = totalErros;
-
-        contabilizaErro(qtdErros, letra);
-        processaResultadoJogo(qtdErros, adivinhou);
     }
 
     return (

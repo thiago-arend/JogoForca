@@ -20,6 +20,7 @@ export default function App() {
     const [chuteHabilitado, setChuteHabilitado] = useState(false);
 
     console.log(palavraSorteada);
+    console.log('total erros', totalErros);
 
     function resetEstado(pSorteada) {
         setLetrasDesabilitadas([]);
