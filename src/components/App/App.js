@@ -2,21 +2,12 @@ import './App.css';
 import Jogo from '../Jogo/Jogo.js';
 import Letras from '../Letras/Letras.js';
 import { useState } from 'react';
-
 import listaPalavras from '../../palavras.js';
-import forca0 from '../../assets/forca0.png';
-import forca1 from '../../assets/forca1.png';
-import forca2 from '../../assets/forca2.png';
-import forca3 from '../../assets/forca3.png';
-import forca4 from '../../assets/forca4.png';
-import forca5 from '../../assets/forca5.png';
-import forca6 from '../../assets/forca6.png';
 
 export default function App() {
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
     "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
     "v", "w", "x", "y", "z"];
-    const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
     const [letrasDesabilitadas, setLetrasDesabilitadas] = useState(alfabeto); // o vetor de letras habilitadas começa com todas
     const [totalErros, setTotalErros] = useState(0);
@@ -25,22 +16,22 @@ export default function App() {
     const [vitoria, setVitoria] = useState(false);
     const [fimJogo, setFimJogo] = useState(false);
 
-    console.log(palavraSorteada);
-    console.log('fimjogo', fimJogo);
-    console.log('vitoria', vitoria);
+    // console.log(palavraSorteada);
+    // console.log('fimjogo', fimJogo);
+    // console.log('vitoria', vitoria);
 
-    // function resetEstadoInicial() {
-    //     setLetrasDesabilitadas([]);
-    //     setTotalErros(0);
-    //     setIndiceImagem(0);
-    //     setPalavraSorteada("");
-    //     setVitoria(false);
-    //     setFimJogo(false);
-    // }
+    function resetEstadoInicial() {
+        setLetrasDesabilitadas([]);
+        setTotalErros(0);
+        setIndiceImagem(0);
+        setPalavraSorteada("");
+        setVitoria(false);
+        setFimJogo(false);
+    }
 
     return (
         <div className="container">
-            <Jogo fimJogo = {fimJogo} vitoria = {vitoria} imagensForca = {imagensForca} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
+            <Jogo fimJogo = {fimJogo} vitoria = {vitoria} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
                 setPalavraSorteada = {setPalavraSorteada} indiceImagem = {indiceImagem}
                 listaPalavras = {listaPalavras} setLetrasDesabilitadas = {setLetrasDesabilitadas}/>
             <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros} setTotalErros = {setTotalErros} alfabeto = {alfabeto} letrasDesabilitadas = {letrasDesabilitadas} 
