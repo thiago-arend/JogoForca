@@ -16,6 +16,10 @@ export default function App() {
     const [palavraSorteada, setPalavraSorteada] = useState("");
     const [vitoria, setVitoria] = useState(false);
     const [fimJogo, setFimJogo] = useState(false);
+    const [chute, setChute] = useState("");
+    const [chuteHabilitado, setChuteHabilitado] = useState(false);
+
+    console.log(palavraSorteada);
 
     function resetEstado(pSorteada) {
         setLetrasDesabilitadas([]);
@@ -30,13 +34,18 @@ export default function App() {
         <div className="container">
             <Jogo resetEstado = {resetEstado} fimJogo = {fimJogo} vitoria = {vitoria} 
                   palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
-                  indiceImagem = {indiceImagem} listaPalavras = {listaPalavras} />
+                  setChuteHabilitado = {setChuteHabilitado} indiceImagem = {indiceImagem} 
+                  listaPalavras = {listaPalavras} />
             <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros}
                     setTotalErros = {setTotalErros} alfabeto = {alfabeto} 
-                    letrasDesabilitadas = {letrasDesabilitadas} 
+                    setChuteHabilitado = {setChuteHabilitado} letrasDesabilitadas = {letrasDesabilitadas} 
                     setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada}
                     setIndiceImagem = {setIndiceImagem}/>
-            <Chute />
+            <Chute setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada}
+                    chute = {chute} setChute = {setChute} setIndiceImagem = {setIndiceImagem} 
+                    letrasDesabilitadas = {letrasDesabilitadas} setFimJogo = {setFimJogo} 
+                    setChuteHabilitado = {setChuteHabilitado} chuteHabilitado = {chuteHabilitado}
+                    alfabeto = {alfabeto} setVitoria = {setVitoria}/>
         </div>
     )
 }

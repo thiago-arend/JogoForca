@@ -10,9 +10,14 @@ import forca6 from '../../assets/forca6.png';
 
 export default function Jogo(props) {
     const {fimJogo, vitoria, palavraSorteada, letrasDesabilitadas,
-         indiceImagem, listaPalavras, resetEstado} = props;
+        setChuteHabilitado, indiceImagem, listaPalavras, resetEstado} = props;
 
     const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
+
+    function iniciaJogo() {
+        resetEstado(sorteiaPalavra());
+        setChuteHabilitado(true);
+    }
 
     function sorteiaPalavra() {
         const min = 0;
@@ -26,7 +31,7 @@ export default function Jogo(props) {
         <div className="jogo">
             <img src={ imagensForca[indiceImagem] } />
             <div>
-                <button onClick={ () => resetEstado(sorteiaPalavra()) }>Escolher Palavra</button>
+                <button onClick={ iniciaJogo }>Escolher Palavra</button>
                 <ul className="palavra">
                     {palavraSorteada.split("").map((l, i) => <li key={i}
                         className={`underline
