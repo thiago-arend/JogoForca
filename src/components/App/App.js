@@ -20,18 +20,18 @@ export default function App() {
     // console.log('fimjogo', fimJogo);
     // console.log('vitoria', vitoria);
 
-    function resetEstadoInicial() {
+    function resetEstado(pSorteada) {
         setLetrasDesabilitadas([]);
         setTotalErros(0);
         setIndiceImagem(0);
-        setPalavraSorteada("");
+        setPalavraSorteada(pSorteada);
         setVitoria(false);
         setFimJogo(false);
     }
 
     return (
         <div className="container">
-            <Jogo fimJogo = {fimJogo} vitoria = {vitoria} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
+            <Jogo resetEstado = {resetEstado} fimJogo = {fimJogo} vitoria = {vitoria} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
                 setPalavraSorteada = {setPalavraSorteada} indiceImagem = {indiceImagem}
                 listaPalavras = {listaPalavras} setLetrasDesabilitadas = {setLetrasDesabilitadas}/>
             <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros} setTotalErros = {setTotalErros} alfabeto = {alfabeto} letrasDesabilitadas = {letrasDesabilitadas} 

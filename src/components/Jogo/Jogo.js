@@ -10,7 +10,7 @@ import forca6 from '../../assets/forca6.png';
 
 export default function Jogo(props) {
     const {fimJogo, vitoria, setPalavraSorteada, palavraSorteada, letrasDesabilitadas,
-         indiceImagem, listaPalavras, setLetrasDesabilitadas} = props;
+         indiceImagem, listaPalavras, setLetrasDesabilitadas, resetEstado} = props;
 
     const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
@@ -23,11 +23,10 @@ export default function Jogo(props) {
     }
 
     function processaPalavra() {
-        // habilita letras
-        setLetrasDesabilitadas([]);
-        // sorteia palavra e salva estado
+        // sorteia palavra
         const pSorteada = sorteiaPalavra();
-        setPalavraSorteada(pSorteada);
+        // inicia estados para nvo jogo
+        resetEstado(pSorteada);
     }
 
     return (
