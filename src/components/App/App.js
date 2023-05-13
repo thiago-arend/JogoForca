@@ -15,8 +15,9 @@ export default function App() {
     const [palavraSorteada, setPalavraSorteada] = useState("");
     const [vitoria, setVitoria] = useState(false);
     const [fimJogo, setFimJogo] = useState(false);
+    const [jogoEmProgresso, setJogoEmProgresso] = useState(false);
 
-    // console.log(palavraSorteada);
+    console.log(palavraSorteada);
     // console.log('fimjogo', fimJogo);
     // console.log('vitoria', vitoria);
 
@@ -31,11 +32,15 @@ export default function App() {
 
     return (
         <div className="container">
-            <Jogo resetEstado = {resetEstado} fimJogo = {fimJogo} vitoria = {vitoria} totalErros = {totalErros} alfabeto = {alfabeto} palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
-                setPalavraSorteada = {setPalavraSorteada} indiceImagem = {indiceImagem}
-                listaPalavras = {listaPalavras} setLetrasDesabilitadas = {setLetrasDesabilitadas}/>
-            <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros} setTotalErros = {setTotalErros} alfabeto = {alfabeto} letrasDesabilitadas = {letrasDesabilitadas} 
-                setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada} setIndiceImagem = {setIndiceImagem}/>
+            <Jogo resetEstado = {resetEstado} fimJogo = {fimJogo} vitoria = {vitoria} 
+                  palavraSorteada = {palavraSorteada} letrasDesabilitadas = {letrasDesabilitadas}
+                  jogoEmProgresso = {jogoEmProgresso} indiceImagem = {indiceImagem} 
+                  setJogoEmProgresso = {setJogoEmProgresso} listaPalavras = {listaPalavras} />
+            <Letras setFimJogo = {setFimJogo} setVitoria = {setVitoria} totalErros = {totalErros}
+                    setTotalErros = {setTotalErros} alfabeto = {alfabeto} 
+                    letrasDesabilitadas = {letrasDesabilitadas} 
+                    setLetrasDesabilitadas = {setLetrasDesabilitadas} palavraSorteada = {palavraSorteada}
+                    setJogoEmProgresso = {setJogoEmProgresso} setIndiceImagem = {setIndiceImagem}/>
         </div>
     )
 }

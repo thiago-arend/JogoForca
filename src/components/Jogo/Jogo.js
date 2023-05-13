@@ -9,8 +9,8 @@ import forca6 from '../../assets/forca6.png';
 
 
 export default function Jogo(props) {
-    const {fimJogo, vitoria, setPalavraSorteada, palavraSorteada, letrasDesabilitadas,
-         indiceImagem, listaPalavras, setLetrasDesabilitadas, resetEstado} = props;
+    const {fimJogo, vitoria, palavraSorteada, letrasDesabilitadas, setJogoEmProgresso,
+         jogoEmProgresso, indiceImagem, listaPalavras, resetEstado} = props;
 
     const imagensForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
@@ -23,6 +23,8 @@ export default function Jogo(props) {
     }
 
     function processaPalavra() {
+        // altera flag do jogo em progresso
+        setJogoEmProgresso(true);        
         // sorteia palavra
         const pSorteada = sorteiaPalavra();
         // inicia estados para nvo jogo
@@ -33,7 +35,8 @@ export default function Jogo(props) {
         <div className="jogo">
             <img src={ imagensForca[indiceImagem] } />
             <div>
-                <button onClick={ processaPalavra }>Escolher Palavra</button>
+                <button disabled={`${ (jogoEmProgresso ? "disabled" : "") }`} 
+                    onClick={ processaPalavra }>Escolher Palavra</button>
                 <ul className="palavra">
                     {palavraSorteada.split("").map((l, i) => <li key={i} 
                         className={`underline 
