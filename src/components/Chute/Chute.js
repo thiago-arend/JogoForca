@@ -23,9 +23,9 @@ export default function Chute(props) {
     return (
         <div className="container-chute">
             <span>Já sei a palavra!</span>
-            <input disabled={!chuteHabilitado ? "disabled" : ""} 
+            <input data-test="guess-input" disabled={!chuteHabilitado ? "disabled" : ""} 
                 onChange={ (e) => setChute(e.target.value) } type="text" value={ chute }></input>
-            <button disabled={!chuteHabilitado ? "disabled" : ""} onClick={ validaChute }>Chutar</button>
+            <button data-test="guess-button" disabled={!chuteHabilitado ? "disabled" : ""} onClick={ validaChute }>Chutar</button>
         </div>
     )
 }

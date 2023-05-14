@@ -29,10 +29,10 @@ export default function Jogo(props) {
 
     return (
         <div className="jogo">
-            <img src={ imagensForca[indiceImagem] } />
+            <img data-test="game-image" src={ imagensForca[indiceImagem] } />
             <div>
-                <button onClick={ iniciaJogo }>Escolher Palavra</button>
-                <ul className="palavra">
+                <button data-test="choose-word" onClick={ iniciaJogo }>Escolher Palavra</button>
+                <ul data-test="word" className="palavra">
                     {palavraSorteada.split("").map((l, i) => <li key={i}
                         className={`underline
                         ${ ((fimJogo && vitoria) ? "vitoria" : "") }

@@ -48,7 +48,7 @@ export default function Letras(props) {
 
     return (
         <div className="alfabeto">
-            {alfabeto.map((l) => <button key={l} disabled={(letrasDesabilitadas.includes(l)) ? "disabled": ""}
+            {alfabeto.map((l) => <button data-test="letter" key={l} disabled={(letrasDesabilitadas.includes(l)) ? "disabled": ""}
                  className={`letra-alfabeto ${(letrasDesabilitadas.includes(l)) ? "usada": ""}`}
                  onClick={() => processaLetra(l)}> {l.toUpperCase()} </button>)}
         </div>
