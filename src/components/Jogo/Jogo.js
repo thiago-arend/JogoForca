@@ -32,8 +32,8 @@ export default function Jogo(props) {
             <img data-test="game-image" src={ imagensForca[indiceImagem] } />
             <div>
                 <button data-test="choose-word" onClick={ iniciaJogo }>Escolher Palavra</button>
-                <ul className="palavra">
-                    {palavraSorteada.split("").map((l, i) => <li data-test="word" key={i}
+                <ul data-test="word" className="palavra">
+                    {palavraSorteada.split("").map((l, i) => <li key={i}
                         className={`underline
                         ${ ((fimJogo && vitoria) ? "vitoria" : "") }
                         ${ ((fimJogo && !vitoria) ? "derrota" : "") }`}>
