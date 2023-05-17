@@ -36,7 +36,7 @@ export default function Letras(props) {
         // se palavra sorteada não inclui letra
         // e se palavra sorteada sem acentos tbm não inclui letra
         if (!palavraSorteada.includes(letra) &&
-                 !palavraSorteada.split("").map(l => String.fromCodePoint(l.normalize("NFD").codePointAt(0)))) { // se errou a letra
+                 !palavraSorteada.split("").map(l => String.fromCodePoint(l.normalize("NFD").codePointAt(0))).includes(letra)) { // se errou a letra
             qtdErros++;
             setTotalErros(qtdErros);
             setIndiceImagem(qtdErros);
@@ -45,14 +45,14 @@ export default function Letras(props) {
         // processa resultado jogo
         if (qtdErros < 6 && adivinhou){ // vitoria
             // desabilita letras
-            setLetrasDesabilitadas([...alfabeto].concat(letrasDesabilitadasAtualizadas));
+            setLetrasDesabilitadas([...alfabeto].concat(palavraSorteada.split("")));
             setFimJogo(true);
             setVitoria(true);
             setChuteHabilitado(false);
         }
         if (qtdErros === 6 && !adivinhou){ // derrota
             // desabilita letras
-            setLetrasDesabilitadas([...alfabeto].concat(letrasDesabilitadasAtualizadas));
+            setLetrasDesabilitadas([...alfabeto].concat(palavraSorteada.split("")));
             setFimJogo(true);
             setVitoria(false);
             setChuteHabilitado(false);
