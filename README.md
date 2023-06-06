@@ -1,3 +1,24 @@
+<h1>Jogo da Forca</h1>
+<p>The Jogo da Forca (Hangman Game) is a desktop web application built using React. It provides an interactive and entertaining experience where players can test their word-guessing skills. The game randomly selects a word from a pool of 231 words, making each playthrough unique and challenging.</p>
+<p>Here's what the Jogo da Forca offers:</p>
+<ul>
+  <li><strong>Dynamic Gameplay:</strong> The application provides a dynamic and engaging gameplay experience, allowing players to guess letters and uncover the hidden word.</li>
+  <li><strong>Random Word Selection:</strong> The game selects words randomly from a pool of 231 words, ensuring a diverse and unpredictable gaming experience.</li>
+  <li><strong>Guess the Hidden Word:</strong> Players have the option to guess the hidden word at any time during the game. If they guess correctly, they win immediately. However, if they guess incorrectly, they lose the game.</li>
+</ul>
+<h2>Getting Started</h2>
+To play the Jogo da Forca, follow these steps:
+<ol>
+  <li>Access the game using the following link: <a href="https://projeto8-jogoforca-nine-gamma.vercel.app/">Jogo da Forca</a>.</li>
+  <li>Start guessing letters to uncover the hidden word.</li>
+  <li>If you feel confident, you can try to guess the hidden word at any time.</li>
+  <li>If you guess the word correctly, you win the game immediately.</li>
+  <li>However, if your guess is incorrect, you lose the game.</li>
+  <li>Continue guessing letters or try to guess the word until you either uncover the full word, win the game with a correct word guess, or run out of attempts.</li>
+</ol>
+<p>Have fun and enjoy playing the Jogo da Forca!</p>
+Please note that the Jogo da Forca is designed to be played in the desktop browser. Visit the <a href="https://projeto8-jogoforca-nine-gamma.vercel.app/">Jogo da Forca</a> link to start playing.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
